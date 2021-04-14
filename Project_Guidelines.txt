@@ -1,0 +1,24 @@
+Once setup done 
+Create Jenkins Job with Maven Project
+Add github project by selecting git check box
+install Maven , by going to the Global tool configuration,
+install Java  , by going to the Global tool configuration,, for this you need Oracle account
+Under build , clean,install, package commands below pom.xml(as these are the steps you need to trigger in maven)
+check this check box on GitHub hook trigger for GITScm polling , so that it will auto trigger when there is a change.
+For this you have to update payload url with your jenkins server address(you will get this under configure system -->
+jenkins url), copy this URL and paste under your github project(settings-->webhook-->Add webhook -->paste jenkis uRL.)
+Once our war file is ready , we need to push this to tomcat,
+for this click on "Post build actions", select deploy war/ear to container option
+Initially it won't be visible in Jenkins, you have to install Deploy to container plugin.
+Once done , select respective tomcat version along with tomcat url .
+Before that add tomcat credentials as below
+Dashboard-->Credentials --> system --> Global credentials --> click on Jenkins
+Add Credentials , Give tomcat user 
+this user details you can see in below
+apache folder/conf/tomcat-users.xml
+check the user whatever you want , have added deployer as user , so the same have added with password.
+
+Now select save and apply.
+
+Update the changes in your app and wait for auto trigger .
+once suceed , try to access the tomcat url : http://13.127.12.90:8090/webapp/ to see the changes 
