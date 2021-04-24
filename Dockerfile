@@ -1,5 +1,5 @@
 # Pull base image 
-From tomcat:8-jre8 
+From ubuntu:16.04 
 
 # Maintainer 
 MAINTAINER "krishhmomdad@gmail.com " 
